@@ -4,24 +4,21 @@ const Web3 = require('web3');
 
 const web3 = new Web3(ganache.provider());
 
-class Car{
-	park() {
-		return 'stopped';
-	}
+let accounts;
 
-	drive() {
-		return 'vroom';
-	}
-}
+beforeEach(async () => {
+	// Get list of all accounts 
+	accounts = await web3.eth.getAccounts();
+		// .then(fetchedAccounts => {
+		// 	console.log(fetchedAccounts)
+		// });
 
-const car;
 
-beforeEach(() => {
-	const car = new Car();
+	// Use one to depoly contract
 });
 
-describe('Car', () => {
-	it('can park', () => {
-		assert.equal(car.park(), 'stopped');
+describe('Inbox', () => {
+	it('depoly a contract', () => {
+		console.log(accounts)
 	});
 });
